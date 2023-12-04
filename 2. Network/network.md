@@ -1,5 +1,14 @@
 # Create Network 
 
+* Enable ipv4 forward
+
+```
+vim /etc/sysctl.conf
+
+hapus tanda pagar pada baris 
+net.ipv4.ip_forward=1
+```
+
 * Create new file network 01-netcfg.yaml
 ```
 vim /etc/netplan/01-netcfg.yaml
