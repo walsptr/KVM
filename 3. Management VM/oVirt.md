@@ -6,7 +6,7 @@
 - RAM: 8GB
 - Disk: 64 GB
 
-### Checking CPU for enablef Virtualization
+### Checking CPU for enable Virtualization
 
 ```
 egrep -c '(vmx|svm)' /proc/cpuinfo
