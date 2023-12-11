@@ -22,26 +22,13 @@ dnf module -y enable pki-deps
 dnf module -y enable postgresql:12
 dnf module -y enable mod_auth_openidc:2.3
 dnf module -y enable nodejs:14
+dnf downgrade postgresql-jdbc
+```
+downgrade postgresql sampe versi 42.2.3.3
+
+```
 dnf distro-sync --nobest
 dnf upgrade --nobest
 dnf install ovirt-engine -y
 engine-setup
-```
-
-### Create SSL
-
-- Checking where directory SSL default
-```
-ovirt-imageio --show-config | jq .tls
-```
-
-- Create CA
-```
-cd /etc/pki/ovirt-engine/certs
-
-```
-
-- Create Certi SSL
-```
-
 ```
