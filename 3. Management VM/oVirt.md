@@ -1,18 +1,18 @@
 # oVirt Nodes
 
-* Minimum Requirements
+### Minimum Requirements
 - Using Centos / RedHat
 - RAM: 8GB
 - Disk: 64 GB
 
-* Checking CPU for enablef Virtualization
+### Checking CPU for enablef Virtualization
 
 ```
 egrep -c '(vmx|svm)' /proc/cpuinfo
 ```
 if the result more than 0 it's good, of not u must turn on CPU virtualization
 
-* Installation oVirt
+### Installation oVirt
 
 ```
 dnf -y install https://resources.ovirt.org/pub/yum-repo/ovirt-release44.rpm
@@ -27,7 +27,7 @@ dnf install ovirt-engine -y
 engine-setup
 ```
 
-* Create SSL
+### Create SSL
 
 - Checking where directory SSL default
 ```

@@ -1,6 +1,6 @@
 # Create Network 
 
-* Enable ipv4 forward
+### Enable ipv4 forward
 
 ```
 vim /etc/sysctl.conf
@@ -9,7 +9,7 @@ hapus tanda pagar pada baris
 net.ipv4.ip_forward=1
 ```
 
-* Create new file network 01-netcfg.yaml
+### Create new file network 01-netcfg.yaml
 ```
 vim /etc/netplan/01-netcfg.yaml
 ```
@@ -38,7 +38,7 @@ network:
   version: 2
 ```
 
-* define bridge network
+### define bridge network
 
 ```
 vim br0.xml
@@ -52,14 +52,14 @@ vim br0.xml
 </network>
 ```
 
-* start bridge network
+### start bridge network
 ```
 virsh net-define /path/br0.xml
 virsh net-start br0
 virsh net-autostart br0
 ```
 
-* list network
+### list network
 ```
 virsh net-list
 ```
