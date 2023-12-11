@@ -1,7 +1,7 @@
 # oVirt Nodes
 
 ### Minimum Requirements
-- 3 Server
+- 3 Server (1 Manager, 2 Host)
 - Using Centos / RedHat
 - RAM: 8GB
 - Disk: 64 GB
