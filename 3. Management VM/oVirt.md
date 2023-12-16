@@ -32,3 +32,8 @@ dnf upgrade --nobest
 dnf install ovirt-engine -y
 engine-setup
 ```
+
+downgrade postgresql sampe versi 42.2.3.3
+```
+dnf downgrade postgresql-jdbc
+```
