@@ -5,7 +5,7 @@
 subscription-manager repos --enable=openstack-16-for-rhel-8-x86_64-rpms
 subscription-manager repos --enable=fast-datapath-for-rhel-8-x86_64-rpms
 yum install https://rdoproject.org/repos/rdo-release.rpm
-yum install openvswitch libibverbs
+yum install openvswitch3.1 libibverbs
 
 ```
 enable openvswitch
@@ -21,7 +21,7 @@ membuat network bridge
 
 ```
 ovs-vsctl add-br ovs-br
-nmcli con up ovs-br
+ifconfig ovs-br up
 ```
 
 menambahkan port bridge
@@ -40,5 +40,38 @@ check dhcp client
 ```
 dhclient ovs-br
 ```
+```
+virt-install -n debian9-server --os-type=Linux --os-variant=debian9 --ram=1024 --vcpu=1 --network=bridge:ovs-br,virtualport_type=openvswitch --graphics none --location=/opt/debian-9.13.0-amd64-DVD-1.iso --extra-args console=ttyS0
+```
 
-Selanjutnya kalian bisa langsung mendefine network openvswitch ke kvm kalian
+<!-- ```
+ip tuntap add mode tap vport1
+ifconfig vport1 up
+ovs-vsctl add-port ovs-br vport1
+ovs-vsctl show
+```
+
+Buat sebuah file xml untuk define vport baru ke libvirt, untuk ip address yang digunakan pastikan satu network dengan interface ovs-br
+```
+nano /tmp/vport1.xml
+```
+isi file
+```
+<network>
+  <name>vport1</name>
+  <forward mode='nat'/>
+  <bridge name='vport1' stp='on' delay='0'/>
+  <ip address='192.168.189.100' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.189.200' end='192.168.189.254'/>
+    </dhcp>
+  </ip>
+</network>
+```
+
+```
+virsh net-define /tmp/vport1.xml
+virsh net-list --all
+virsh net-start vport1
+```
+Selanjutnya kalian bisa langsung mendefine network openvswitch ke kvm kalian -->
