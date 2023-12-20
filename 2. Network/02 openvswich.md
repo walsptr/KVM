@@ -40,6 +40,8 @@ check dhcp client
 ```
 dhclient ovs-br
 ```
+
+selanjutnya bisa dicoba langsung dimasukin ke vm yang akan dibuat
 ```
 virt-install -n debian9-server --os-type=Linux --os-variant=debian9 --ram=1024 --vcpu=1 --network=bridge:ovs-br,virtualport_type=openvswitch --graphics none --location=/opt/debian-9.13.0-amd64-DVD-1.iso --extra-args console=ttyS0
 ```
