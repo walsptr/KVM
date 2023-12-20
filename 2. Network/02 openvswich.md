@@ -30,7 +30,7 @@ menambahkan port bridge
 ovs-vsctl add-port ovs-br enp0s3
 ```
 
-hidup dan matikan interface internet, agar dhcp client di arahkan ke port birdge ovs
+hidup dan matikan interface internet, agar dhcp client di arahkan ke port bridge ovs
 ```
 nmcli con down enp0s3
 nmcli con up enp0s3
