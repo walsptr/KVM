@@ -25,7 +25,7 @@ nmcli con up ovs-br
 ```
 
 menambahkan port bridge
-note: setelah menambahkan port, nantinya kalian akan kehilangan koneksi dari port internet (enp0s3)
+<br>note: setelah menambahkan port, nantinya kalian akan kehilangan koneksi dari port internet (enp0s3)
 ```
 ovs-vsctl add-port ovs-br enp0s3
 ```
