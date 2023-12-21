@@ -43,7 +43,7 @@ dhclient ovs-br
 
 selanjutnya bisa dicoba langsung dimasukin ke vm yang akan dibuat
 ```
-virt-install -n debian9-server --os-type=Linux --os-variant=debian9 --ram=1024 --vcpu=1 --network=bridge:ovs-br,virtualport_type=openvswitch --graphics none --location=/opt/debian-9.13.0-amd64-DVD-1.iso --extra-args console=ttyS0
+virt-install --memory 2048 --vcpus 2 --name mycentos --disk /var/lib/libvirt/images/CentOS-8-ec2-8.3.2011-20201204.2.x86_64.qcow2,device=disk,bus=virtio,format=qcow2 --cloud-init user-data=user-data --os-type Linux --os-variant centos8 --network bridge:ovs-br,virtualport_type=openvswitch --graphics none --import
 ```
 
 <!-- ```

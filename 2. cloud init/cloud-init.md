@@ -52,5 +52,5 @@ ssh_authorized_keys:
 
 - Create VM with cloud init
 ```
-virt-install --memory 2048 --vcpus 2 --name mycentos --disk /var/lib/libvirt/images/CentOS-8-ec2-8.3.2011-20201204.2.x86_64.qcow2,device=disk,bus=virtio,format=qcow2 --cloud-init user-data=user-data --os-type Linux --os-variant centos8 --network bridge:ovs-br,virtualport_type=openvswitch --graphics none --import
+virt-install --memory 2048 --vcpus 2 --name mycentos --disk /var/lib/libvirt/images/CentOS-8-ec2-8.3.2011-20201204.2.x86_64.qcow2,device=disk,bus=virtio,format=qcow2 --cloud-init user-data=user-data --os-type Linux --os-variant centos8 --graphics none --import
 ```
